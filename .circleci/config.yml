@@ -38,7 +38,7 @@ jobs:
                         --repo-id dsarafpa/danit_github_pipeline \
                         --branch ${CIRCLE_BRANCH} \
                         --source CIRCLE_CI \
-                        --create-repo-if-missing
+                        --framework SECRETS
 workflows:
   version: 2
   build:
