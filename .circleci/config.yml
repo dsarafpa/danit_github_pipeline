@@ -23,7 +23,8 @@ jobs:
                                         --data "{}" -s)
             export TEMP_TOKEN=$(echo $TOKEN_RESPONSE | jq -r '.token')
             docker pull distributions-dev.traps.paloaltonetworks.com/cli-docker/${TEMP_TOKEN}/method:amd64-${CORTEX_CLI_VERSION}-dev
-            docker tag distributions-dev.traps.paloaltonetworks.com/cli-docker/${TEMP_TOKEN}/method:amd64-${CORTEX_CLI_VERSION} cortexcli:${CORTEX_CLI_VERSION}
+            docker tag distributions-dev.traps.paloaltonetworks.com/cli-docker/${TEMP_TOKEN}/method:amd64-${CORTEX_CLI_VERSION}-dev cortexcli:${CORTEX_CLI_VERSION}
+            
       - run:
           name: Run Cortex CLI Container
           #  Replace owner/repo with your actual repository information
