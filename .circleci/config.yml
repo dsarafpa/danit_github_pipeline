@@ -6,7 +6,7 @@ executors:
       resource_class: medium
     environment:
       CORTEX_API_URL: https://api-viso-htekyka6hazvzxavandiix.xdr-qa2-uat.us.paloaltonetworks.com
-      CORTEX_CLI_VERSION: 0.12.10
+      CORTEX_CLI_VERSION: 0.12.13
 
 jobs:
   cortex-code-scan:
@@ -24,7 +24,6 @@ jobs:
             export TEMP_TOKEN=$(echo $TOKEN_RESPONSE | jq -r '.token')
             docker pull distributions-dev.traps.paloaltonetworks.com/cli-docker/${TEMP_TOKEN}/method:amd64-${CORTEX_CLI_VERSION}-dev
             docker tag distributions-dev.traps.paloaltonetworks.com/cli-docker/${TEMP_TOKEN}/method:amd64-${CORTEX_CLI_VERSION}-dev cortexcli:${CORTEX_CLI_VERSION}
-            
       - run:
           name: Run Cortex CLI Container
           #  Replace owner/repo with your actual repository information
@@ -39,7 +38,6 @@ jobs:
                         --branch ${CIRCLE_BRANCH} \
                         --source CIRCLE_CI \
                         --create-repo-if-missing
-                        
 workflows:
   version: 2
   build:
