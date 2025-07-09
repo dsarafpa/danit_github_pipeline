@@ -37,7 +37,8 @@ jobs:
                         --directory /home/code \
                         --repo-id dsarafpa/danit_github_pipeline \
                         --branch ${CIRCLE_BRANCH} \
-                        --source CIRCLE_CI
+                        --source CIRCLE_CI \
+                        --create-repo-if-missing
                         
 workflows:
   version: 2
