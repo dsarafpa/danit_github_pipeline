@@ -5,8 +5,8 @@ executors:
       image: ubuntu-2004:current # Replace with a suitable image or executor
       resource_class: medium
     environment:
-      CORTEX_API_URL: https://api-viso-htekyka6hazvzxavandiix.xdr-qa2-uat.us.paloaltonetworks.com
-      CORTEX_CLI_VERSION: 0.12.15
+      CORTEX_API_URL: https://api-viso-ntc6mwnwsm9nwrry2zu7hc.xdr-qa2-uat.us.paloaltonetworks.com
+      CORTEX_CLI_VERSION: 0.13.8
 
 jobs:
   cortex-code-scan:
@@ -34,7 +34,7 @@ jobs:
                         --api-key-id ${CORTEX_API_KEY_ID} \
                         code scan \
                         --directory /home/code \
-                        --repo-id dsarafpa/danit_github_pipeline \
+                        --repo-id <REPLACE WITH REPO_OWNER/REPO_NAME> \
                         --branch ${CIRCLE_BRANCH} \
                         --source CIRCLE_CI \
                         --create-repo-if-missing
