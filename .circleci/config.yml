@@ -34,7 +34,7 @@ jobs:
                         --api-key-id ${CORTEX_API_KEY_ID} \
                         code scan \
                         --directory /home/code \
-                        --repo-id <REPLACE WITH REPO_OWNER/REPO_NAME> \
+                        --repo-id dsarafpa/danit_github_pipeline \
                         --branch ${CIRCLE_BRANCH} \
                         --source CIRCLE_CI \
                         --create-repo-if-missing
